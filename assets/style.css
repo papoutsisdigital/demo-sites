@@ -114,3 +114,88 @@ footer {
   padding: 20px;
   color: #6c78a6;
 }
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    width: 92%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .navbar .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .back-btn {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .demos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  .card a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
