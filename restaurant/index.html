@@ -27,10 +27,20 @@ header{
   background:#000;
 }
 
+nav{
+  display:flex;
+  gap:15px;
+}
+
 nav a{
   color:white;
-  margin-left:15px;
   text-decoration:none;
+}
+
+.hamburger{
+  display:none;
+  font-size:24px;
+  cursor:pointer;
 }
 
 .hero{
@@ -99,67 +109,36 @@ footer{
   padding:20px;
 }
 
-@media(max-width:1024px){
-  .container{padding:30px 15px}
-}
-
+/* MOBILE */
 @media(max-width:800px){
+  nav{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    background:#000;
+    margin-top:10px;
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
   header{
     flex-direction:column;
     align-items:flex-start;
-    gap:10px;
-  }
-
-  nav{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-  }
-
-  .hero{
-    padding:60px 15px;
   }
 
   .hero h1{
-    font-size:28px;
+    font-size:26px;
   }
 
   .grid{
     grid-template-columns:1fr;
   }
-
-  .card{
-    padding:12px;
-  }
-
-  .menu-item{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
-  }
-
-  button{
-    width:100%;
-  }
-}
-
-@media(max-width:480px){
-  body{
-    font-size:14px;
-  }
-
-  header h2{
-    font-size:18px;
-  }
-
-  .hero h1{
-    font-size:22px;
-  }
-
-  input,textarea{
-    font-size:14px;
-  }
-}
 }
 </style>
 </head>
@@ -167,41 +146,40 @@ footer{
 <body>
 
 <header>
-  <h2>🍽️ Restaurant</h2>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#order">Order</a>
-    <a href="#contact">Contact</a>
+  <h2>🍽️ Εστιατόριο</h2>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav id="nav">
+    <a href="#about">Σχετικά</a>
+    <a href="#order">Μενού</a>
+    <a href="#order">Παραγγελία</a>
+    <a href="#contact">Επικοινωνία</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Delicious Food Experience</h1>
+  <h1>Απόλαυσε μοναδικές γεύσεις</h1>
   <p>Παράγγειλε εύκολα online</p>
 </section>
 
 <div class="container">
 
-<!-- ABOUT -->
 <section id="about" class="section">
   <h2>Σχετικά με εμάς</h2>
-  <p>Ένα σύγχρονο εστιατόριο με γεύσεις υψηλής ποιότητας και γρήγορη εξυπηρέτηση.</p>
+  <p>Παραδοσιακές και σύγχρονες γεύσεις με ποιότητα και ταχύτητα.</p>
 </section>
 
-<!-- MENU + ORDER SYSTEM -->
 <section id="order" class="section">
   <h2>Online Παραγγελία</h2>
 
   <div class="grid">
 
     <div class="card">
-      <h3>Menu</h3>
+      <h3>Μενού</h3>
       <div id="menu"></div>
     </div>
 
     <div class="card">
-      <h3>Cart</h3>
+      <h3>Καλάθι</h3>
       <div id="cart"></div>
       <p>Σύνολο: €<span id="total">0</span></p>
 
@@ -210,13 +188,12 @@ footer{
       <input id="phone" placeholder="Τηλέφωνο">
       <textarea id="address" placeholder="Διεύθυνση"></textarea>
 
-      <button onclick="submitOrder()">Ολοκλήρωση</button>
+      <button onclick="submitOrder()">Ολοκλήρωση Παραγγελίας</button>
     </div>
 
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
   <h2>Επικοινωνία</h2>
   <p>📍 Αθήνα</p>
@@ -231,10 +208,10 @@ footer{
 
 <script>
 const menuData = [
-  {id:1,name:"Burger",price:8},
-  {id:2,name:"Pizza",price:10},
-  {id:3,name:"Pasta",price:9},
-  {id:4,name:"Salad",price:6}
+  {id:1,name:"Μπέργκερ",price:8},
+  {id:2,name:"Πίτσα",price:10},
+  {id:3,name:"Μακαρόνια",price:9},
+  {id:4,name:"Σαλάτα",price:6}
 ];
 
 let cart = [];
@@ -247,7 +224,7 @@ function renderMenu(){
     menu.innerHTML += `
       <div class="menu-item">
         <div>${item.name} - €${item.price}</div>
-        <button onclick="addToCart(${item.id})">Add</button>
+        <button onclick="addToCart(${item.id})">Προσθήκη</button>
       </div>
     `;
   });
@@ -282,6 +259,10 @@ function submitOrder(){
   }
 
   alert('Η παραγγελία στάλθηκε! (Demo)');
+}
+
+function toggleMenu(){
+  document.getElementById('nav').classList.toggle('active');
 }
 
 renderMenu();
