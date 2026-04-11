@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Order Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e63946;
+    }
+
+    .menu-item {
+      background: #1d1d1d;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .form-section {
+      margin-top: 20px;
+      background: #1d1d1d;
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #e63946;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff4d5a;
+    }
+
+    .total {
+      font-size: 18px;
+      margin-top: 10px;
+      text-align: right;
+    }
+
+    @media (max-width: 600px) {
+      .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🍔 Restaurant Order</h1>
+
+  <form id="orderForm">
+
+    <!-- MENU -->
+    <div class="menu-item">
+      <label>
+        <input type="checkbox" data-price="8"> Burger (€8)
+      </label>
+      <input type="number" min="1" value="1">
+    </div>
+
+    <div class="menu-item">
+      <label>
+        <input type="checkbox" data-price="10"> Pizza (€10)
+      </label>
+      <input type="number" min="1" value="1">
+    </div>
+
+    <div class="menu-item">
+      <label>
+        <input type="checkbox" data-price="9"> Pasta (€9)
+      </label>
+      <input type="number" min="1" value="1">
+    </div>
+
+    <div class="menu-item">
+      <label>
+        <input type="checkbox" data-price="6"> Salad (€6)
+      </label>
+      <input type="number" min="1" value="1">
+    </div>
+
+    <!-- CUSTOMER INFO -->
+    <div class="form-section">
+      <h3>Στοιχεία Πελάτη</h3>
+      <input type="text" placeholder="Όνομα" required>
+      <input type="tel" placeholder="Τηλέφωνο" required>
+      <textarea placeholder="Διεύθυνση"></textarea>
+    </div>
+
+    <!-- TOTAL -->
+    <div class="total">
+      Σύνολο: €<span id="total">0</span>
+    </div>
+
+    <button type="submit">Ολοκλήρωση Παραγγελίας</button>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('orderForm');
+  const totalDisplay = document.getElementById('total');
+
+  function calculateTotal() {
+    let total = 0;
+    const items = document.querySelectorAll('.menu-item');
+
+    items.forEach(item => {
+      const checkbox = item.querySelector('input[type="checkbox"]');
+      const qty = item.querySelector('input[type="number"]').value;
+
+      if (checkbox.checked) {
+        total += checkbox.dataset.price * qty;
+      }
+    });
+
+    totalDisplay.textContent = total;
+  }
+
+  document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('change', calculateTotal);
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Η παραγγελία στάλθηκε! (demo)");
+  });
+</script>
+
+</body>
+</html>
