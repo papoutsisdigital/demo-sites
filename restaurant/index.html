@@ -1,173 +1,231 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <title>Restaurant Order Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Website</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
-      margin: 0;
-      padding: 20px;
-    }
+<style>
+:root {
+  --primary:#e63946;
+  --dark:#0f0f0f;
+  --card:#1c1c1c;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
+body{
+  margin:0;
+  font-family:system-ui;
+  background:var(--dark);
+  color:#fff;
+}
 
-    h1 {
-      text-align: center;
-      color: #e63946;
-    }
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  background:#000;
+}
 
-    .menu-item {
-      background: #1d1d1d;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+nav a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+}
 
-    input[type="number"] {
-      width: 60px;
-      padding: 5px;
-      border-radius: 6px;
-      border: none;
-    }
+.hero{
+  padding:80px 20px;
+  text-align:center;
+  background:linear-gradient(#000000aa,#000000aa), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5');
+  background-size:cover;
+}
 
-    .form-section {
-      margin-top: 20px;
-      background: #1d1d1d;
-      padding: 15px;
-      border-radius: 12px;
-    }
+.hero h1{
+  font-size:42px;
+}
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      border: none;
-    }
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #e63946;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
 
-    button:hover {
-      background: #ff4d5a;
-    }
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:15px;
+}
 
-    .total {
-      font-size: 18px;
-      margin-top: 10px;
-      text-align: right;
-    }
+.menu-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px;
+  border-bottom:1px solid #333;
+}
 
-    @media (max-width: 600px) {
-      .menu-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+button{
+  background:var(--primary);
+  border:none;
+  padding:10px 15px;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+input,textarea{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  margin-top:8px;
+  background:#2a2a2a;
+  color:white;
+}
+
+.section{
+  margin-bottom:60px;
+}
+
+footer{
+  background:#000;
+  text-align:center;
+  padding:20px;
+}
+
+@media(max-width:800px){
+  .grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
+<header>
+  <h2>🍽️ Restaurant</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#order">Order</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Delicious Food Experience</h1>
+  <p>Παράγγειλε εύκολα online</p>
+</section>
+
 <div class="container">
-  <h1>🍔 Restaurant Order</h1>
 
-  <form id="orderForm">
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>Σχετικά με εμάς</h2>
+  <p>Ένα σύγχρονο εστιατόριο με γεύσεις υψηλής ποιότητας και γρήγορη εξυπηρέτηση.</p>
+</section>
 
-    <!-- MENU -->
-    <div class="menu-item">
-      <label>
-        <input type="checkbox" data-price="8"> Burger (€8)
-      </label>
-      <input type="number" min="1" value="1">
+<!-- MENU + ORDER SYSTEM -->
+<section id="order" class="section">
+  <h2>Online Παραγγελία</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Menu</h3>
+      <div id="menu"></div>
     </div>
 
-    <div class="menu-item">
-      <label>
-        <input type="checkbox" data-price="10"> Pizza (€10)
-      </label>
-      <input type="number" min="1" value="1">
+    <div class="card">
+      <h3>Cart</h3>
+      <div id="cart"></div>
+      <p>Σύνολο: €<span id="total">0</span></p>
+
+      <h4>Στοιχεία</h4>
+      <input id="name" placeholder="Όνομα">
+      <input id="phone" placeholder="Τηλέφωνο">
+      <textarea id="address" placeholder="Διεύθυνση"></textarea>
+
+      <button onclick="submitOrder()">Ολοκλήρωση</button>
     </div>
 
-    <div class="menu-item">
-      <label>
-        <input type="checkbox" data-price="9"> Pasta (€9)
-      </label>
-      <input type="number" min="1" value="1">
-    </div>
+  </div>
+</section>
 
-    <div class="menu-item">
-      <label>
-        <input type="checkbox" data-price="6"> Salad (€6)
-      </label>
-      <input type="number" min="1" value="1">
-    </div>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Επικοινωνία</h2>
+  <p>📍 Αθήνα</p>
+  <p>📞 2100000000</p>
+</section>
 
-    <!-- CUSTOMER INFO -->
-    <div class="form-section">
-      <h3>Στοιχεία Πελάτη</h3>
-      <input type="text" placeholder="Όνομα" required>
-      <input type="tel" placeholder="Τηλέφωνο" required>
-      <textarea placeholder="Διεύθυνση"></textarea>
-    </div>
-
-    <!-- TOTAL -->
-    <div class="total">
-      Σύνολο: €<span id="total">0</span>
-    </div>
-
-    <button type="submit">Ολοκλήρωση Παραγγελίας</button>
-  </form>
 </div>
 
+<footer>
+  © 2026 Restaurant Demo
+</footer>
+
 <script>
-  const form = document.getElementById('orderForm');
-  const totalDisplay = document.getElementById('total');
+const menuData = [
+  {id:1,name:"Burger",price:8},
+  {id:2,name:"Pizza",price:10},
+  {id:3,name:"Pasta",price:9},
+  {id:4,name:"Salad",price:6}
+];
 
-  function calculateTotal() {
-    let total = 0;
-    const items = document.querySelectorAll('.menu-item');
+let cart = [];
 
-    items.forEach(item => {
-      const checkbox = item.querySelector('input[type="checkbox"]');
-      const qty = item.querySelector('input[type="number"]').value;
+function renderMenu(){
+  const menu = document.getElementById('menu');
+  menu.innerHTML = '';
 
-      if (checkbox.checked) {
-        total += checkbox.dataset.price * qty;
-      }
-    });
+  menuData.forEach(item=>{
+    menu.innerHTML += `
+      <div class="menu-item">
+        <div>${item.name} - €${item.price}</div>
+        <button onclick="addToCart(${item.id})">Add</button>
+      </div>
+    `;
+  });
+}
 
-    totalDisplay.textContent = total;
+function addToCart(id){
+  const item = menuData.find(i=>i.id===id);
+  cart.push(item);
+  renderCart();
+}
+
+function renderCart(){
+  const cartDiv = document.getElementById('cart');
+  cartDiv.innerHTML = '';
+  let total = 0;
+
+  cart.forEach(item=>{
+    total += item.price;
+    cartDiv.innerHTML += `<div>${item.name} - €${item.price}</div>`;
+  });
+
+  document.getElementById('total').textContent = total;
+}
+
+function submitOrder(){
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+
+  if(!name || !phone || cart.length===0){
+    alert('Συμπλήρωσε στοιχεία και προϊόντα');
+    return;
   }
 
-  document.querySelectorAll('input').forEach(input => {
-    input.addEventListener('change', calculateTotal);
-  });
+  alert('Η παραγγελία στάλθηκε! (Demo)');
+}
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert("Η παραγγελία στάλθηκε! (demo)");
-  });
+renderMenu();
 </script>
 
 </body>
