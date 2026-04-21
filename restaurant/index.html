@@ -8,24 +8,54 @@
 
 <body>
 
+<!-- NAV -->
 <header class="nav">
   <h1>Papoutsis</h1>
-  <a href="menu.html" class="btn">Παράγγειλε</a>
+  <button onclick="scrollToMenu()" class="btn">Παράγγειλε</button>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h2>Street food εμπειρία αλλιώς</h2>
     <p>Φρέσκα υλικά • Γρήγορη παράδοση</p>
-    <a href="menu.html" class="btn big">Δες το Menu</a>
+    <button onclick="scrollToMenu()" class="btn big">Δες Menu</button>
   </div>
 </section>
 
-<section class="features">
-  <div>🚀 Fast Delivery</div>
-  <div>🔥 Premium Ποιότητα</div>
-  <div>💳 Online Παραγγελία</div>
+<!-- MENU -->
+<section id="menu-section">
+  <h2>Menu</h2>
+
+  <!-- categories -->
+  <div class="tabs">
+    <button onclick="filter('all')" class="active">Όλα</button>
+    <button onclick="filter('burger')">Burger</button>
+    <button onclick="filter('pizza')">Pizza</button>
+    <button onclick="filter('salad')">Σαλάτες</button>
+  </div>
+
+  <div id="menu" class="grid"></div>
 </section>
 
+<!-- CART -->
+<div class="cart-box">
+  <h3>Καλάθι</h3>
+  <ul id="cart"></ul>
+  <p id="total"></p>
+  <button onclick="openCheckout()">Παραγγελία</button>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal">
+  <div class="modal-content">
+    <h2>Στοιχεία Παραγγελίας</h2>
+    <input placeholder="Όνομα">
+    <input placeholder="Διεύθυνση">
+    <button onclick="submitOrder()">Ολοκλήρωση</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
