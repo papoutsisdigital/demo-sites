@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Checkout</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+<style>
+    .card:hover {
+        transform:none;
+        box-shadow: none;
+    }
+</style>
+
+</head>
+  <body>
+    
+<section class=" header-wrapper">
+    <div class="container-fluid">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg text-white">
+                <div class="container-fluid ">
+                  <a class="navbar-brand text-white" href="#">LOGO</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="nav-link active text-white " aria-current="page" href="index.html">HOME</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="#">MENU</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          PAGES
+                        </a>
+                        <ul class="dropdown-menu " style="background-color: #b1011f;">
+                          <li><a class="dropdown-item text-white" href="about-us.html" style="background: none;">About Us</a></li>
+                          <li><a class="dropdown-item text-white" href="#" style="background: none;">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item text-white" href="#" style="background: none;">Something else here</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white ">CONTACT</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                      <ul class="navbar-nav me-2 ">
+                        <li><a class="nav-link me-4" href="#">
+                            <svg height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="white" d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                        </a></li>
+                        <li>
+                            <a class=" btn btn-dark text-white me-3" >QUICK ORDER</a>
+                        </li>
+                        <li class="ms-3 me-2    ">
+                            <i>
+                                <svg height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" ><path fill="white" d="M48 0C21.5 0 0 21.5 0 48L0 368c0 26.5 21.5 48 48 48l16 0c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L48 0zM416 160l50.7 0L544 237.3l0 18.7-128 0 0-96zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>     
+                            </i>
+                        </li>
+                        <li>
+                            <p class="mb-0" style="font-size: 10px;float: right;">FAST DELIVERY</p>
+                            <P style="color:#fda209">(234)346-634</P>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <h1 class="page-title fw-bold">MY CHECKOUT</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item fw-semibold " ><a class="text-dark" href="#">Home</a></li>
+                    <li class="breadcrumb-item fw-semibold " style="color: #fda209 !important;" aria-current="page">My Checkout</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="category-section mb-5" style="height: auto;">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card" style="box-shadow: none !important;">
+                            <div class="card-header" style="background-color: #f9f5f2;">
+                                <h3 class="fw-bold card-title">Billing Details</h3>
+                            </div>
+                            <div class="card-body" style="background-color: #f9f5f2;">
+                                <form action="">
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <label for="" class="form-label fw-semibold">First Name <span class="text-danger"   >*</span></label>
+                                            <input type="text" class="form-control" placeholder="First Name">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="" class="form-label fw-semibold">Last Name <span class="text-danger"   >*</span></label>
+                                            <input type="text" class="form-control" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">Company Name (optional)</label>
+                                        <input type="text" class="form-control" placeholder="Company Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">Country / Region <span class="text-danger"   >*</span></label>
+                                        <select name="" class="form-select" id="">
+                                            <option value="">Select a country / region…</option>
+                                            <option value="">Nigeria</option>
+                                            <option value="">Ghana</option>
+                                            <option value="">Kenya</option>
+                                            <option value="">South Africa</option>
+                                            <option value="">Tanzania</option>
+                                            <option value="">Uganda</option>
+                                            <option value="">Zambia</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">Street Address <span class="text-danger"   >*</span></label>
+                                        <input type="text" class="form-control" placeholder="House number and street name">
+                                        <input type="text" class="form-control mt-2" placeholder="Apartment, suite, unit etc. (optional)">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">Town / City <span class="text-danger"   >*</span></label>
+                                        <input type="text" class="form-control" placeholder="Town / City">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">State  <span class="text-danger"   >*</span></label>
+                                        <select name="" class="form-select" id="">
+                                            <option value="">Select a state…</option>
+                                            <option value="">Nigeria</option>
+                                            <option value="">Ghana</option>
+                                            <option value="">Kenya</option>
+                                            <option value="">South Africa</option>
+                                            <option value="">Tanzania</option>
+                                            <option value="">Uganda</option>
+                                            <option value="">Zambia</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">Postcode / ZIP <span class="text-danger"   >*</span></label>
+                                        <input type="text" class="form-control" placeholder="Postcode / ZIP">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">Phone <span class="text-danger"   >*</span></label>
+                                        <input type="text" class="form-control" placeholder="Phone">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">Email Address <span class="text-danger"   >*</span></label>
+                                        <input type="email" class="form-control" placeholder="Email Address">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-3">
+                        <div class="card" style="box-shadow: none !important;">
+                            <div class="card-header" style="background-color: #f9f5f2;">
+                                <h3 class="fw-bold card-title">Additional Information</h3>
+                            </div>
+                            <div class="card-body" style="background-color: #f9f5f2;">
+                                <form action="">
+                                    <div class="mb-3">
+                                        <label for="" class="form-label fw-semibold">Order Notes (optional)</label>
+                                        <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card" style="box-shadow: none !important;">
+                            <div class="card-header" style="background-color: #f9f5f2;">
+                                <h3 class="fw-bold card-title">Your Order</h3>
+                            </div>
+                            <div class="card-body" style="background-color: #f9f5f2;">
+                                <div class="mb-0 d-flex ">
+                                    <p class="fw-semibold">Product</p>
+                                    <p class="fw-semibold ms-auto">Total</p>
+                                </div>
+                                <div class="mb-2 d-flex border-bottom">
+                                    <p style="font-size: 14px;">Meaty Legend x<span> 2</span></p>
+                                    <p class="ms-auto" style="font-size: 14px;"> $25.00</p>
+                                </div>
+                                <div class="mb-2 d-flex border-bottom">
+                                    <p style="font-size: 14px;">Meaty Legend x<span> 2</span></p>
+                                    <p class="ms-auto" style="font-size: 14px;"> $25.00</p>
+                                </div>
+                                <div class="mb-2 d-flex border-bottom">
+                                    <p style="font-size: 14px;">Meaty Legend x<span> 2</span></p>
+                                    <p class="ms-auto" style="font-size: 14px;"> $25.00</p>
+                                </div>
+                                <div class="mb-2 d-flex border-bottom">
+                                    <p style="font-size: 14px;">Meaty Legend x<span> 2</span></p>
+                                    <p class="ms-auto" style="font-size: 14px;"> $25.00</p>
+                                </div>
+                                <div class="mb-2 d-flex ">
+                                    <p class="fw-semibold" style="font-size: 14px;">Subtotal </p>
+                                    <p class="ms-auto fw-semibold" style="font-size: 14px;"> $25.00</p>
+                                </div>
+                                <div class="mb-2 d-flex">
+                                    <p class="fw-semibold" style="font-size: 14px;">Total</p>
+                                    <p class="ms-auto fw-semibold" style="font-size: 14px;"> $25.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+                        <div class="card" style="background-color: #f9f5f2;">
+                            <div class="card-body">
+                                <p>Have a coupon? <a href="#" class="text-danger"> Click here to enter your coupon code</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+                        <div class="card" style="background-color: #f9f5f2;">
+                            <div class="card-body">
+                               <button class="btn btn-dark text-white w-100">PLACE ORDER</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="newsletter-section">
+    <div class="container" style="background-color: #ffa500; border-radius: 5px;">
+        <div class="row " style="padding: 25px;">
+            <div class="col-lg-12 ">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3 class="mt-2">Subscribe to our newsletter</h3>
+                    </div>
+                    <div class="col-lg-6">
+
+                        <div class="subscribe-input d-flex gap-2 mt-2">
+                            <input type="email" class="form-control" placeholder="Email">
+                            <button class="subscribe-btn">SUBSCRIBE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Brand Column -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <div class="footer-brand">BRAND NAME</div>
+                <p class="footer-description">Lorem ipsum dolor, sit ame consectetur adipisicing elit.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-1 col-md-6 mb-4 mb-lg-0">
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                   
+                </ul>
+            </div>
+
+            <!-- Contact Links -->
+            <div class="col-lg-1 col-md-6 mb-4 mb-lg-0">
+                <ul class="footer-links">
+                    <li><a href="#">Delivery</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-1 col-md-6 mb-4 mb-lg-0">
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 ">
+                <div class="working-hours float-end">
+                    <i class="fa fa-clock-o"></i>
+                    <div class="">
+                        <div>WORKING HOURS</div>
+                        <div>7:00 - 24:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="col-lg-3 col-md-6">
+                <div class="social-links text-center">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

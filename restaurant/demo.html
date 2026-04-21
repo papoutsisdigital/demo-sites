@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .dashboard-container {
+            display: flex;
+            margin-top: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            margin-right: 20px;
+        }
+        .sidebar .nav-link {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .sidebar .nav-link.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .content {
+            flex-grow: 1;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container dashboard-container">
+        <div class="sidebar">
+            <h3>DASHBOARD</h3>
+            <nav class="nav flex-column">
+                <a class="nav-link active" href="#">ORDERS</a>
+                <a class="nav-link" href="#">DOWNLOADS</a>
+                <a class="nav-link" href="#">ADDRESSES</a>
+                <a class="nav-link" href="#">ACCOUNT DETAILS</a>
+                <a class="nav-link" href="#">LOGOUT</a>
+            </nav>
+        </div>
+        <div class="content">
+            <h2>Account Details</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="firstName">First name *</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lastName">Last name</label>
+                            <input type="text" class="form-control" id="lastName">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="displayName">Display name *</label>
+                    <input type="text" class="form-control" id="displayName" required>
+                    <small class="form-text text-muted">This will be how your name will be displayed in the account section and in reviews.</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address *</label>
+                    <input type="email" class="form-control" id="email" value="doveinellyk.com" required>
+                </div>
+                <h3>Password change</h3>
+                <div class="form-group">
+                    <label for="currentPassword">Current password (leave blank to leave unchanged)</label>
+                    <input type="password" class="form-control" id="currentPassword">
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New password (leave blank to leave unchanged)</label>
+                    <input type="password" class="form-control" id="newPassword">
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Confirm new password</label>
+                    <input type="password" class="form-control" id="confirmNewPassword">
+                </div>
+                <button type="submit" class="btn btn-primary">SAVE CHANGES</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
