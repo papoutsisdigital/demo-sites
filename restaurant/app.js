@@ -1,20 +1,21 @@
 const menu = [
-  {id:1, name:"Burger", price:8},
-  {id:2, name:"Pizza", price:10},
-  {id:3, name:"Σαλάτα", price:6}
+  {id:1, name:"Burger", price:8, img:"https://picsum.photos/200?1"},
+  {id:2, name:"Pizza", price:10, img:"https://picsum.photos/200?2"},
+  {id:3, name:"Σαλάτα", price:6, img:"https://picsum.photos/200?3"}
 ];
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// render menu
 const menuDiv = document.getElementById("menu");
+
 if(menuDiv){
   menu.forEach(item => {
     menuDiv.innerHTML += `
-      <div class="item">
+      <div class="card">
+        <img src="${item.img}">
         <h3>${item.name}</h3>
         <p>${item.price}€</p>
-        <button onclick="add(${item.id})">Προσθήκη</button>
+        <button onclick="add(${item.id})">+</button>
       </div>
     `;
   });
@@ -41,6 +42,7 @@ function renderCart(){
 renderCart();
 
 function checkout(){
+  alert("Demo παραγγελία ολοκληρώθηκε!");
   localStorage.removeItem("cart");
-  window.location.href = "success.html";
+  location.reload();
 }
